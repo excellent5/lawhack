@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="select/dist/css/bootstrap-select.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="select/dist/js/bootstrap-select.js"></script>
+
+</head>
+<body>
+<!-- 	<div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+		<div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Location
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+          <li><a href="#">LA</a></li>
+          <li><a href="#">NY</a></li>
+        </ul>
+      </div>
+      <div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Location
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
+          <li><a href="#">LA</a></li>
+          <li><a href="#">NY</a></li>
+        </ul>
+      </div>
+	</div> -->
+<!-- 	<select>
+		<option value =""></option>
+		<option value ="ny">Saab</option>
+	</select>
+	</br>
+	<select>
+		<option value ="house">house</option>
+		<option value ="hotel">hotel</option>
+	</select>
+	</br>
+	<select>
+		<option value ="la">la</option>
+		<option value ="ny">Saab</option>
+	</select>
+	</br> -->
+	<form>
+	<div class="row">
+		<div class="col-md-2 col-md-offset-5">
+		legal template machine
+	</div>
+	<div class="col-md-4 col-md-offset-4">
+		<div class="row">
+			<div class="col-md-5">type of document:</div>
+			<div class="col-md-7"><select class="selectpicker" id="documenttype" onchange="changeListener()">
+    <option>Loan Agreement</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select></div>
+		</div>
+				<div class="row">
+			<div class="col-md-5">type of real estate:</div>
+			<div class="col-md-7"><select class="selectpicker" id="estatetype" onchange="changeListener()">
+    <option>Loan Agreement</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select></div>
+		</div>
+				<div class="row">
+			<div class="col-md-5">state:</div>
+			<div class="col-md-7"><select class="selectpicker" id="location" onchange="changeListener()">
+    <option>Loan Agreement</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select></div>
+		</div>
+				<div class="row">
+			<div class="col-md-5">loaner ot borrower:</div>
+			<div class="col-md-7"><select class="selectpicker" id="ifloaner" onchange="changeListener()">
+    <option>Loan Agreement</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select></div>
+		</div>
+</div>
+		<div class="col-md-2 col-md-offset-5">
+		<button class="btn btn-default" onclick="submitForm()">create a template</button>
+	</div>
+</div>
+</form>
+<script type="text/javascript">
+    
+function submitForm() {
+	var documenttype = document.getElementById("documenttype").value;
+    var documenttype = document.getElementById("estatetype").value;
+    var documenttype = document.getElementById("location").value;
+    var documenttype = document.getElementById("ifloaner").value;
+}
+function changeListener(){
+	var documenttype = document.getElementById("documenttype").value;
+    var documenttype = document.getElementById("estatetype").value;
+    var documenttype = document.getElementById("location").value;
+    var documenttype = document.getElementById("ifloaner").value;
+
+}
+</script>
+</body>
+</html>
