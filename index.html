@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="themes/default/css/umeditor.css">
+    <script src="third-party/jquery.min.js"></script>
+    <script type="text/javascript" src="umeditor.config.js"></script>
+    <script type="text/javascript" src="umeditor.js"></script>
+    <script type="text/javascript" src="lang/en/en.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            window.um = UM.getEditor('container', {
+                toolbar: ['undo redo | bold italic underline strikethrough | superscript subscript | forecolor backcolor | removeformat |',
+                    'insertorderedlist insertunorderedlist | selectall cleardoc paragraph | fontfamily fontsize' ,
+                    '| justifyleft justifycenter justifyright justifyjustify |',
+                    'link unlink ']
+            });
+        });
+    </script>
+    <script type="text/javascript" src="FileSaver.min.js"></script>
+
+</head>
+<body>
+
+<script id="container" name="content" type="text/plain" style="width:600px;height:200px;">
+
+</script>
+<Button onclick="insertText()">hello</Button>
+<Button onclick="getHtmlContent()">download</Button>
+<Button onclick="print()">print</Button>
+
+<script type="text/javascript">
+    function insertText(){
+        UM.getEditor('container').setContent("haha", true);
+    }
+
+    function getHtmlContent(){
+        var content = UM.getEditor('container').getContent();
+        var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
+        saveAs(blob, "try.html");
+    }
+
+    function print(){
+
+    }
+</script>
+
+<div class="clear"></div>
+
+</body>
+</html>
