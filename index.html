@@ -89,15 +89,18 @@
 
     function submitForm() {
         var documenttype = document.getElementById("documenttype").value;
-        var documenttype = document.getElementById("estatetype").value;
-        var documenttype = document.getElementById("location").value;
-        var documenttype = document.getElementById("ifloaner").value;
+        var estatetype = document.getElementById("estatetype").value;
+        var location = document.getElementById("location").value;
+        var ifloaner = document.getElementById("ifloaner").value;
     }
     function changeListener(){
         var documenttype = document.getElementById("documenttype").value;
-        var documenttype = document.getElementById("estatetype").value;
-        var documenttype = document.getElementById("location").value;
-        var documenttype = document.getElementById("ifloaner").value;
+        var estatetype = document.getElementById("estatetype").value;
+        var location = document.getElementById("location").value;
+        var ifloaner = document.getElementById("ifloaner").value;
+        $.post( "test.php", { "documenttype": documenttype, "estatetype": estatetype,"location":location,"ifloaner":ifloaner},function(data){
+            
+        });
 
     }
 </script>
