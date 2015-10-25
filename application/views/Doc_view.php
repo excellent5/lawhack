@@ -64,20 +64,21 @@
 <script type="text/javascript">
     function createDoc(){
         var name=prompt("Please type in the name","default");
-        console.log(name);
+//        console.log(name);
         if (name!=null && name!=""){
-            var form = document.createElement("form");
-            form.setAttribute("method", "post");
-            form.setAttribute("type", "post");
-            form.setAttribute("action", "addDoc");
-
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", name);
-            form.appendChild(hiddenField);
-
-            document.body.appendChild(form);
-            form.submit();
+//            var form = document.createElement("form");
+//            form.setAttribute("method", "post");
+//            form.setAttribute("type", "post");
+//            form.setAttribute("action", "addDoc");
+//
+//            var hiddenField = document.createElement("input");
+//            hiddenField.setAttribute("type", "hidden");
+//            hiddenField.setAttribute("name", name);
+//            form.appendChild(hiddenField);
+//
+//            document.body.appendChild(form);
+//            form.submit();
+            window.location.href = "addDoc/"+name;
         }
     }
 </script>

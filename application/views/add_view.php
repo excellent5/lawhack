@@ -232,12 +232,17 @@
 </script>
 
 
+<input id="docid" style="display: none" value="<?php echo $docid?>">
+
 
 
 <script type="text/javascript">
-    
+
     function updateDoc(){
-        alert("Document saved");
+        var content = UM.getEditor('container').getContent();
+        var docid = document.getElementById("docid").value;
+        $.post("updateDoc", {"docid": docid, "text": content}, function (data) {
+        });
     }
 
     function getHtmlContent(){

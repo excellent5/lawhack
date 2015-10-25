@@ -123,7 +123,11 @@
 <script type="text/javascript">
 
     function updateDoc(){
-        alert("Document saved");
+        var content = UM.getEditor('editor').getContent();
+//        UM.getEditor('editor').sync('editor');
+        $.post("updateDoc", {"docid": docid, "text": content}, function (data) {
+            console.log("post it");
+        });
     }
 
     function getHtmlContent(){

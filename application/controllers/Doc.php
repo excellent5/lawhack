@@ -27,10 +27,10 @@ class Doc extends CI_Controller
         $this->load->view("Doc_view", $data);
     }
 
-    public function addDoc()
+    public function addDoc($name)
     {
 //        $name = $_POST["name"];
-        $name = $this->input->post("name");
+//        $name = $this->input->post("name");
         $id = $this->session->userdata('userId');
         $this->load->model("doc_model");
         $docid = $this->doc_model->addDoc($id, $name);
@@ -43,16 +43,17 @@ class Doc extends CI_Controller
 //        $text =
         $this->load->model("doc_model");
         $text = $this->doc_model->getDocText($id);
+        $data["docid"] = $id;
         $data["text"] = $text->doc;
         $this->load->view("add_view", $data);
     }
 
-    public function updateDoc($docid)
+    public function updateDoc()
     {
-//        $id = $this->session->userdata("userId");
-//        $docid = $this->input->post("docid");
         $text = $this->input->post("text");
-        $data['text'] = $text;
+        $docid = $this->input->post("docid");
+        echo $text;
+        echo $docid;
 
         $this->load->model("doc_model");
         $this->doc_model->updateDoc($docid, $text);
