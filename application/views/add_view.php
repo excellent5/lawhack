@@ -155,34 +155,36 @@
                         </select></div>
                 </div>
                 <div class="row" style="padding-bottom:15px">
-                    <div class="col-md-5">Terms:</div>
-                    <div class="col-md-7"><select class="selectpicker" id="paymentstype" onchange="changeListener()">
-                            <option>Revolving Credit</option>
-                            <option>Fixed/Monthly</option>
-                            <option>Fixed/Quarterly</option>
-                            <option>CDFI/Quarterly</option>
+                    <div class="col-md-5">Type of Real Estate:</div>
+                    <div class="col-md-7"><select class="selectpicker" id="estatetype" onchange="changeListener()">
+                            <option>Hotel</option>
+                            <option>Office</option>
+                            <option>Industrial Warehouse</option>
                         </select></div>
                 </div>
                 <div class="row" style="padding-bottom:15px">
-                    <div class="col-md-5">Representations and Warranties:</div>
+                    <div class="col-md-5">Type of Loan:</div>
+                    <div class="col-md-7"><select class="selectpicker" id="loantype" onchange="changeListener()">
+                            <option>Primary Financing</option>
+                            <option>Mezzanine</option>
+                            <option>Revolving</option>
+                        </select></div>
+                </div>
+                <div class="row" style="padding-bottom:15px">
+                    <div class="col-md-5">Location:</div>
+                    <div class="col-md-7"><select class="selectpicker" id="location" onchange="changeListener()">
+                            <option>California</option>
+                            <option>New York</option>
+                        </select></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">Representing:</div>
                     <div class="col-md-7"><select class="selectpicker" id="represent" onchange="changeListener()">
-                            <option>Hotel/Favor Lender</option>
-                            <option>Hotel/Favor Borrower</option>
-                            <option>Commercial Real Estate</option>
+                            <option>Lender</option>
+                            <option>Borrower</option>
                         </select></div>
                 </div>
-                <div class="row">
-                    <div class="col-md-5">Miscellaneous:</div>
-                    <div class="col-md-7"><select class="selectpicker" id="Miscellaneous" onchange="changeListener()">
-                            <option>Real Estate/California</option>
-                            <option>Real Estate/New York</option>
-                        </select></div>
-                </div>
-                <div class="row">
-                    Affirmative Covenants:</br>
-                    Negative Covenants:</br>
-                    Defaults and Remedies:
-                </div>
+
             </div>
             <div class="col-md-1">
 
@@ -206,17 +208,20 @@
 
     function submitForm() {
         var documenttype = document.getElementById("documenttype").value;
-        var paymentstype = document.getElementById("paymentstype").value;
+        var estatetype = document.getElementById("estatetype").value;
+        var loantype = document.getElementById("loantype").value;
+        var location = document.getElementById("location").value;
         var represent = document.getElementById("represent").value;
-        var Miscellaneous = document.getElementById("Miscellaneous").value;
+
     }
     function changeListener(){
         console.log("enter");
         var documenttype = document.getElementById("documenttype").value;
-        var paymentstype = document.getElementById("paymentstype").value;
+        var estatetype = document.getElementById("estatetype").value;
+        var loantype = document.getElementById("loantype").value;
+        var location = document.getElementById("location").value;
         var represent = document.getElementById("represent").value;
-        var Miscellaneous = document.getElementById("Miscellaneous").value;
-        $.post( "https://api.havenondemand.com/1/api/sync/findsimilar/v1",{"apikey":"c7adda60-9d70-4c88-8327-7e5db4cbe9dd","indexes":"contract","print":"all","text":documenttype+paymentstype+represent+Miscellaneous} ,function( data ) {
+        $.post( "https://api.havenondemand.com/1/api/sync/findsimilar/v1",{"apikey":"c7adda60-9d70-4c88-8327-7e5db4cbe9dd","indexes":"contract","print":"all","text":documenttype+estatetype+loantype+location+represent} ,function( data ) {
         var dataobj = data;
         var text = dataobj.documents[0].content;
             console.log(text);
