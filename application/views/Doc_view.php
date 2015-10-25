@@ -57,8 +57,17 @@
         </table>
     </div>
     <div class="col-md-4">
-        <a class="btn btn-lg btn-block btn-danger" href="addDoc">Create New Document</a>
+        <a class="btn btn-lg btn-block btn-danger" onclick="createDoc()">Create New Document</a>
     </div>
 </div>
+<script type="text/javascript">
+    function createDoc(){
+        var name=prompt("Please type in the name","default")
+        if (name!=null && name!=""){
+            //保存函数
+            
+        }
+    }
+</script>
 </body>
 </html>

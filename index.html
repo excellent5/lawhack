@@ -89,7 +89,7 @@
             </div>
             <div class="row">
     <ul class="nav navbar-nav navbar-right" style="padding-top:15px">
-        <li><button class="btn">save</button></li>
+        <li><button class="btn" onclick="saveFunc()">save</button></li>
         <li><button class="btn" style="margin-left:15px">download</button></li>
 </div>
         </div>
@@ -116,6 +116,12 @@
             
         });
 
+    }
+    function saveFunc(){
+        var name=prompt("Please type in the name","default")
+        if (name!=null && name!=""){
+            //保存函数
+        }
     }
 </script>
 

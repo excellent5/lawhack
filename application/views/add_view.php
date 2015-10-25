@@ -87,7 +87,7 @@
             </div>
             <div class="row">
                 <ul class="nav navbar-nav navbar-right" style="padding-top:15px">
-                    <li><button class="btn">save</button></li>
+                    <li><button class="btn" onclick="updateDoc()">save</button></li>
                     <li><button class="btn" onclick="getHtmlContent()" style="margin-left:15px">download</button></li>
             </div>
         </div>
@@ -121,6 +121,10 @@
 
 
 <script type="text/javascript">
+    
+    function updateDoc(){
+        alert("Document saved");
+    }
 
     function getHtmlContent(){
         var content = UM.getEditor('container').getContent();
