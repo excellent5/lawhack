@@ -20,6 +20,12 @@ class Doc_model extends CI_Model
         return $this->db->insert_id();
     }
 
+    function getDocText($id){
+        $querystring = sprintf("select doc from document where id = %d", $id);
+        $result = $this->db->query($querystring);
+        return $result->row();
+    }
+
     function updateDoc($docid, $text){
         $querystring = sprintf("Update document set text='%s' where id=%d", $text, $docid);
         $result = $this->db->query($querystring);

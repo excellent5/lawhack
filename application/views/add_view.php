@@ -83,7 +83,7 @@
 
             </div>
             <div class="col-md-7">
-                <script id="container" name="content" type="text/plain" style="width:700px;height:400px;"></script>
+                <script id="container" name="content" type="text/plain" style="width:700px;height:400px;"><?php echo $text?></script>
             </div>
             <div class="row">
                 <ul class="nav navbar-nav navbar-right" style="padding-top:15px">

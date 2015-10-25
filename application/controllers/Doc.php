@@ -40,7 +40,10 @@ class Doc extends CI_Controller
     }
 
     public function editDoc($id){
-        $text =
+        $this->load->model("doc_model");
+        $text = $this->doc_model->getDocText($id);
+        $data["text"] = $text->doc;
+        $this->load->view("add_view", $data);
     }
 
     public function updateDoc($docid)

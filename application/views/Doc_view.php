@@ -44,9 +44,9 @@
                     $i = 1;
                     if(!empty($details)) {
                         foreach ($details as $docdetail) {
-                            printf("<tr class='clickable-row' data-href='/editDoc/%d'>", $docdetail->id);
-                            printf("<td>%d</td><td>%s</td><td>%s</td></tr>",
-                                $i, $docdetail->name, $docdetail->lasttime);
+//                            printf("<tr class='clickable-row' data-href='url://editDoc/%d'>", $docdetail->id);
+                            printf("<tr><td>%d</td><td><a href='editDoc/%d'>%s</a></td><td>%s</td></tr>",
+                                $i, $docdetail->id, $docdetail->name, $docdetail->lasttime);
                             $i = $i + 1;
                         }
                     }
