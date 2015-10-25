@@ -32,12 +32,21 @@
 
 <form>
     <div class="container">
-        <div class="row">
-            <h1>hello</h1>
+        <div class="row" style="padding-bottom:15px">
+                  <div class="header clearfix" style="padding-left:15px">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active" style="padding-top:15px"><a href="#">Log out</a></li>
+          </ul>
+        </nav>
+        <h1>Legal template machine</h1>
+      </div>
+           
+            
         </div>
         <div class = "row">
             <div class="col-md-4">
-                    <div class="row">
+                    <div class="row" style="padding-bottom:15px">
                         <div class="col-md-5">type of document:</div>
                         <div class="col-md-7"><select class="selectpicker" id="documenttype" onchange="changeListener()">
                             <option>Loan Agreement</option>
@@ -45,7 +54,7 @@
                             <option>Relish</option>
                         </select></div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="padding-bottom:15px">
                         <div class="col-md-5">type of real estate:</div>
                         <div class="col-md-7"><select class="selectpicker" id="estatetype" onchange="changeListener()">
                             <option>Loan Agreement</option>
@@ -53,7 +62,7 @@
                             <option>Relish</option>
                         </select></div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="padding-bottom:15px">
                         <div class="col-md-5">state:</div>
                         <div class="col-md-7"><select class="selectpicker" id="location" onchange="changeListener()">
                             <option>Loan Agreement</option>
@@ -78,6 +87,11 @@
                     hello world
                 </script>
             </div>
+            <div class="row">
+    <ul class="nav navbar-nav navbar-right" style="padding-top:15px">
+        <li><button class="btn">save</button></li>
+        <li><button class="btn" style="margin-left:15px">download</button></li>
+</div>
         </div>
     </div>
 
@@ -107,11 +121,6 @@
 
 
 
-
-
-<Button onclick="insertText()">hello</Button>
-<Button onclick="getHtmlContent()">download</Button>
-<Button onclick="print()">print</Button>
 
 <script type="text/javascript">
     function insertText(){
