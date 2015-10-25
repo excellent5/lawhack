@@ -29,23 +29,30 @@ class Doc extends CI_Controller
 
     public function addDoc()
     {
-        $name = $this->session->userdata('userName');
+//        $name = $_POST["name"];
+        $name = $this->input->post("name");
         $id = $this->session->userdata('userId');
-        $data["name"] = $name;
+        $this->load->model("doc_model");
+        $docid = $this->doc_model->addDoc($id, $name);
+        $data["text"] = "";
+        $data["docid"] = $docid;
         $this->load->view("add_view", $data);
     }
 
-    public function submitBill()
+    public function editDoc($id){
+        $text =
+    }
+
+    public function updateDoc($docid)
     {
-        $id = $this->session->userdata("userId");
-        $amount = $this->input->post("amount");
-        $description = $this->input->post("description");
-        $checked = $this->input->post("checkbox");
-        $includeBeneficiary = in_array($id, $checked, true);
-        $this->load->model("bill_model");
-        $billId = $this->bill_model->addBill($amount, $description, $id, count($checked), $includeBeneficiary);
-        $this->bill_model->addBillPayer($billId, $checked);
-        redirect("bill/showAllBill");
+//        $id = $this->session->userdata("userId");
+//        $docid = $this->input->post("docid");
+        $text = $this->input->post("text");
+        $data['text'] = $text;
+
+        $this->load->model("doc_model");
+        $this->doc_model->updateDoc($docid, $text);
+//        $this->load->view("update_view", $data);
     }
 
 

@@ -31,7 +31,7 @@
 <!--        <h3 class="text-muted">See your bill below</h3>-->
 <!--    </div>-->
     <div class="col-md-8">
-        <table class="table table-hover">
+        <table class="table">
             <thead>
             <tr>
                 <th>#</th>
@@ -44,7 +44,8 @@
                     $i = 1;
                     if(!empty($details)) {
                         foreach ($details as $docdetail) {
-                            printf("<tr><td>%d</td><td>%s</td><td>%s</td></tr>",
+                            printf("<tr class='clickable-row' data-href='/editDoc/%d'>", $docdetail->id);
+                            printf("<td>%d</td><td>%s</td><td>%s</td></tr>",
                                 $i, $docdetail->name, $docdetail->lasttime);
                             $i = $i + 1;
                         }
@@ -62,10 +63,21 @@
 </div>
 <script type="text/javascript">
     function createDoc(){
-        var name=prompt("Please type in the name","default")
+        var name=prompt("Please type in the name","default");
+        console.log(name);
         if (name!=null && name!=""){
-            //保存函数
-            
+            var form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("type", "post");
+            form.setAttribute("action", "addDoc");
+
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", name);
+            form.appendChild(hiddenField);
+
+            document.body.appendChild(form);
+            form.submit();
         }
     }
 </script>

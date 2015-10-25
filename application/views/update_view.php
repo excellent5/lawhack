@@ -11,7 +11,7 @@
     <!--umeditor css and js-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="<?php echo base_url() ?>/themes/default/css/umeditor.css">
-<!--    <script src="--><?php //echo base_url() ?><!--/third-party/jquery.min.js"></script>-->
+    <!--    <script src="--><?php //echo base_url() ?><!--/third-party/jquery.min.js"></script>-->
     <script type="text/javascript" src="<?php echo base_url() ?>/umeditor.config.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>/umeditor.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>/lang/en/en.js"></script>
@@ -121,7 +121,7 @@
 
 
 <script type="text/javascript">
-    
+
     function updateDoc(){
         alert("Document saved");
     }
