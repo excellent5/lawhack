@@ -194,11 +194,11 @@
         //注意这里添加的样式，最好放在.edui-editor-body .edui-body-container这两个的下边，防止跟页面上css冲突
         //,initialStyle:'.edui-editor-body .edui-body-container p{line-height:1em}'
 
-        //,autoSyncData:true //自动同步编辑器要提交的数据
+        ,autoSyncData:true //自动同步编辑器要提交的数据
 
         //,emotionLocalization:false //是否开启表情本地化，默认关闭。若要开启请确保emotion文件夹下包含官网提供的images表情文件夹
 
-        //,allHtmlEnabled:false //提交到后台的数据是否包含整个html字符串
+        //,allHtmlEnabled:true //提交到后台的数据是否包含整个html字符串
 
         //fontfamily
         //字体设置
@@ -218,7 +218,7 @@
         //可以最多回退的次数,默认20
         //,maxUndoCount:20
         //当输入的字符数超过该值时，保存一次现场
-        //,maxInputCount:1
+        ,maxInputCount:1000
 
         //imageScaleEnabled
         // 是否允许点击文件拖拽改变大小,默认true

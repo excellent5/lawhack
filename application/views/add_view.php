@@ -131,7 +131,7 @@
 </head>
 <body>
 
-<form>
+<!--<form>-->
     <div class="container">
         <div class="row" style="padding-bottom:15px">
             <div class="header clearfix" style="padding-left:15px">
@@ -192,7 +192,7 @@
             </div>
             <div class="row">
                 <ul class="nav navbar-nav navbar-right" style="padding-top:15px">
-                    <li><button class="btn" onclick="alert("Document saved");">save</button></li>
+                    <li><button class="btn" onclick="updateDoc()">save</button></li>
                     <li><button class="btn" onclick="getHtmlContent()" style="margin-left:15px">download</button></li>
             </div>
         </div>
@@ -201,7 +201,7 @@
     <!--<div class="col-md-2 col-md-offset-5">-->
     <!--<button class="btn btn-default" onclick="submitForm()">create a template</button>-->
     <!--</div>-->
-</form>
+<!--</form>-->
 <script type="text/javascript">
 
     function submitForm() {
@@ -211,6 +211,7 @@
         var Miscellaneous = document.getElementById("Miscellaneous").value;
     }
     function changeListener(){
+        console.log("enter");
         var documenttype = document.getElementById("documenttype").value;
         var paymentstype = document.getElementById("paymentstype").value;
         var represent = document.getElementById("represent").value;
@@ -218,6 +219,7 @@
         $.post( "https://api.havenondemand.com/1/api/sync/findsimilar/v1",{"apikey":"c7adda60-9d70-4c88-8327-7e5db4cbe9dd","indexes":"contract","print":"all","text":documenttype+paymentstype+represent+Miscellaneous} ,function( data ) {
         var dataobj = data;
         var text = dataobj.documents[0].content;
+            console.log(text);
         UM.getEditor('container').setContent(text,false);
     });
 
@@ -235,8 +237,8 @@
 
     function getHtmlContent(){
         var content = UM.getEditor('container').getContent();
-        var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
-        saveAs(blob, "try.doc");
+        var blob = new Blob([content], {type: "text/plain"});
+        saveAs(blob, "try.html");
     }
 
 </script>
