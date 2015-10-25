@@ -158,7 +158,7 @@
                 <div class="row" style="padding-bottom:15px">
                     <div class="col-md-5">type of real estate:</div>
                     <div class="col-md-7"><select class="selectpicker" id="estatetype" onchange="changeListener()">
-                            <option>Loan Agreement</option>
+                            <option>Hotel</option>
                             <option>Ketchup</option>
                             <option>Relish</option>
                         </select></div>
@@ -211,9 +211,9 @@
         var estatetype = document.getElementById("estatetype").value;
         var location = document.getElementById("location").value;
         var ifloaner = document.getElementById("ifloaner").value;
-        $.post( "test.php", { "documenttype": documenttype, "estatetype": estatetype,"location":location,"ifloaner":ifloaner},function(data){
-
-        });
+        $.post( "https://api.havenondemand.com/1/api/sync/findsimilar/v1",{"apikey":"c7adda60-9d70-4c88-8327-7e5db4cbe9dd","indexes":"contract","print":"all","text":documenttype+estatetype+location+ifloaner} ,function( data ) {
+        console.log(data);
+    });
 
     }
 </script>
