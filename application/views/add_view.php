@@ -212,7 +212,9 @@
         var location = document.getElementById("location").value;
         var ifloaner = document.getElementById("ifloaner").value;
         $.post( "https://api.havenondemand.com/1/api/sync/findsimilar/v1",{"apikey":"c7adda60-9d70-4c88-8327-7e5db4cbe9dd","indexes":"contract","print":"all","text":documenttype+estatetype+location+ifloaner} ,function( data ) {
-        console.log(data);
+        var dataobj = data;
+        var text = dataobj.documents[0].content;
+        UM.getEditor('container').setContent(text,false);
     });
 
     }
